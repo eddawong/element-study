@@ -3,7 +3,9 @@
     <el-container>
       <el-header>Header</el-header>
       <el-container>
-        <el-aside width="200px">Aside</el-aside>
+        <el-aside width="200px">
+          <NavMenu/>
+        </el-aside>
         <el-container>
           <el-main>Main</el-main>
           <el-footer>Footer</el-footer>
@@ -13,14 +15,17 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import NavMenu from './NavMenu.vue'
+export default Vue.extend({
   name: 'Main',
   data () {
     return {      
     }
-  }
-}
+  },
+  components:{NavMenu}
+})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -44,6 +49,8 @@ export default {
     color: #333;
     text-align: center;
     line-height: 160px;
+    min-height: 600px;
+    max-height: 800px;
   }
   
   body > .el-container {
